@@ -571,17 +571,65 @@ span {
     padding-left: 28px;
     }
      
-  .nav {
+  /*.nav {
    margin-left: 81px;
+  } */
+
+  /*burger menu*/
+   .nav {
+   display: none;
   } 
+  
+  .toggle_bar1,.toggle_bar2,.toggle_bar3 {
+  width: 30px;
+  border: 2px solid #F1CDB3;
+  margin-top: 10px;
+  margin-left: 30rem;
+  }
 
   .toggle_container {
+    display: inline-block;
+    cursor: pointer;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    color: #FAFAFA;
+  }
+
+  .toggle_items {
+  margin-top: 50px;
+  margin-left: -150px;
+  text-align: center;
+  }
+
+  .change .toggle_items{
+  display: flex; 
+  visibility: visible;
+  }
+
+  .change .toggle_bar1 {
+    -webkit-transform: rotate(-90deg) translate(-19px, 12px);
+    transform: rotate(-90deg) translate(-19px, 12px);
+  }
+  
+  .change .toggle_bar2 {
+  -webkit-transform: rotate(-90deg) translate(-5px, -14px);
+  transform: rotate(-90deg) translate(-5px, -14px); 
+  }
+
+  .change .toggle_bar3 {
+    -webkit-transform: rotate(-90deg) translate(9px, -1px);
+    transform: rotate(-90deg) translate(9px, -1px);
+  }
+
+  /* .toggle_container {
     display: none;
     }
     
   .toggle_items {
     display: none;  
-  }
+  }*/
 
   .motto_title {
   margin: 0;
@@ -626,6 +674,10 @@ span {
   text-align: justify;
   }
 
+  .ourfriends_slider {
+    max-width: 640px;
+  }
+
   .ourfriends_title  {
    margin-right: 100px;
    margin-left: 180px;
@@ -635,13 +687,12 @@ span {
    margin-right: 42px;  
   }
 
+  .ourfriends_slider_border {
+   max-width: 600px;
+   }
+
   .ourfriends_circle_left {
    margin-left: 30px;  
-   margin-right: 15px;
-  }
-
-  .ourfriends_circle_right {
-   margin-left: -350px;  
    margin-right: 15px;
   }
 
@@ -707,7 +758,7 @@ span {
   text-align: left;
   }
 
- .nav {
+ /*.nav {
    display: none;
   } 
   
@@ -752,7 +803,7 @@ span {
   .change .toggle_bar3 {
     -webkit-transform: rotate(-90deg) translate(9px, -1px);
     transform: rotate(-90deg) translate(9px, -1px);
-  }
+  }*/
 
   .motto {
   display: block;

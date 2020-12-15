@@ -27,12 +27,21 @@ $( ".ourfriends_slider" ).append(div_ourfriends);
 
 
 function clickSlider() {
-  for (i = 0; i < 3; i++) {   
-   slider.style.transform = 'translateX(-200px)';
-   slider.style.transition = ' all 200ms linear'; 
+  if (screen.width >=768 && screen.width < 1280) {
+      slider.style.transform = 'translateX(-600px)';
+      slider.style.transition = ' all 400ms linear'; 
+  } else if (screen.width >=320 && screen.width < 768) {
+    slider.style.transform = 'translateX(-300px)';
+    slider.style.transition = ' all 400ms linear'; 
+  } 
+  else {
+   for (i = 0; i < 3; i++) {   
+    slider.style.transform = 'translateX(-200px)';
+    slider.style.transition = ' all 400ms linear'; 
+   }
   }
 
-   setTimeout(function(){
+  setTimeout(function(){
     //удаляем все слайды
   for (i = 0; i < 8; i++) { 
     slides[i].remove();  
@@ -47,9 +56,22 @@ function clickSlider() {
   //заполняем массив слайдов
   slides = document.querySelectorAll(".ourfriends_pets");  
 
-  for (i = 0; i < 8; i++) { 
-    slideDistance = - (i - 3) * 360; 
-    slides[i].style.left = slideDistance + 'px';  
+  if (screen.width >=768 && screen.width < 1280) {
+    for (i = 0; i < 8; i++) { 
+      slideDistance = - (i - 2) * 310; 
+      slides[i].style.left = slideDistance + 'px';  
+    }
+  } else if (screen.width >=320 && screen.width < 768) {
+    for (i = 0; i < 8; i++) { 
+      slideDistance = - (i - 1) * 273; 
+      slides[i].style.left = slideDistance + 'px';  
+    }
+  }
+  else {
+   for (i = 0; i < 8; i++) { 
+     slideDistance = - (i - 3) * 360; 
+     slides[i].style.left = slideDistance + 'px';  
+   }
   }
 
    for (i = 0; i < 3; i++) { 
@@ -63,16 +85,32 @@ function clickSlider() {
           ourfriendsSlidesArray[i] = rndIndexOfSlide;
        }
    }
-  },100); 
+  },350); 
+   
 
 
   setTimeout(function(){ 
-    for (i = 0; i < 3; i++) { 
+    if (screen.width >=768 && screen.width < 1280) {
+      for (i = 0; i < 2; i++) { 
+        slideDistance = - 310 * (2 - i);
+        slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
+        slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
+      } 
+    } else if (screen.width >=320 && screen.width < 768) {
+      for (i = 0; i < 1; i++) { 
+        slideDistance = - 292 * (1 - i);
+        slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
+        slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
+      } 
+    }
+    else {
+     for (i = 0; i < 3; i++) { 
       slideDistance = - 360 * (3 - i);
       slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
       slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
-    } 
-  },150); 
+     } 
+    }
+  },680); 
 
 }
 

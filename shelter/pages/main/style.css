@@ -571,17 +571,65 @@ span {
     padding-left: 28px;
     }
      
-  .nav {
+  /*.nav {
    margin-left: 81px;
+  } */
+
+  /*burger menu*/
+   .nav {
+   display: none;
   } 
+  
+  .toggle_bar1,.toggle_bar2,.toggle_bar3 {
+  width: 30px;
+  border: 2px solid #F1CDB3;
+  margin-top: 10px;
+  margin-left: 30rem;
+  }
 
   .toggle_container {
+    display: inline-block;
+    cursor: pointer;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    color: #FAFAFA;
+  }
+
+  .toggle_items {
+  margin-top: 50px;
+  margin-left: -150px;
+  text-align: center;
+  }
+
+  .change .toggle_items{
+  display: flex; 
+  visibility: visible;
+  }
+
+  .change .toggle_bar1 {
+    -webkit-transform: rotate(-90deg) translate(-19px, 12px);
+    transform: rotate(-90deg) translate(-19px, 12px);
+  }
+  
+  .change .toggle_bar2 {
+  -webkit-transform: rotate(-90deg) translate(-5px, -14px);
+  transform: rotate(-90deg) translate(-5px, -14px); 
+  }
+
+  .change .toggle_bar3 {
+    -webkit-transform: rotate(-90deg) translate(9px, -1px);
+    transform: rotate(-90deg) translate(9px, -1px);
+  }
+
+  /* .toggle_container {
     display: none;
     }
     
   .toggle_items {
     display: none;  
-  }
+  }*/
 
   .motto_title {
   margin: 0;
@@ -626,24 +674,21 @@ span {
   text-align: justify;
   }
 
-  .ourfriends_title  {
-   margin-right: 100px;
-   margin-left: 180px;
+  .ourfriends_slider {
+    max-width: 640px;
   }
 
-  .ourfriends_pets {
+  .ourfriends_title {
+   margin-left: 200px;
+  }
+
+   .ourfriends_pets {
    margin-right: 42px;  
   }
 
-  .ourfriends_circle_left {
-   margin-left: 30px;  
-   margin-right: 15px;
-  }
-
-  .ourfriends_circle_right {
-   margin-left: -350px;  
-   margin-right: 15px;
-  }
+  .ourfriends_slider_border {
+   max-width: 600px;
+   }
 
   .ourfriends_button_secondary {
    margin-left: 255px;
@@ -803,17 +848,27 @@ height: 353px;
 .ourfriends_title {
  margin-left: 10px;
  font-size: 25px;
- margin-right: 0;
 }
 
-.ourfriends_circle_left {
- margin-top: 450px;
- margin-left: 70px;
+.ourfriends_slider {
+  max-width: 190px;
+  overflow: hidden;
 }
+
+.ourfriends_slider_border {
+  max-width: 190px;
+  overflow: hidden;
+  }
 
 .ourfriends_circle_right {
-  margin-top: 450px;
-  margin-left: -600px;
+  margin-left: -60px;
+  margin-top: 500px;
+ }
+
+ .ourfriends_circle_left {
+  margin-right: 0;
+  margin-left: 45px;
+  margin-top: 500px;
  }
  
 .ourfriends {
@@ -828,9 +883,13 @@ margin-left: 5px;
 margin-left: -50px;
 }
 
+.ourfriends_pets:hover {
+  box-shadow: -10px 0 20px rgba(156, 149, 149, 0.5);
+ }
+
 .ourfriends_pets {
  align-items: flex-start; 
-
+ margin-left: 50px;
 }
 
 .ourfriends_picture {

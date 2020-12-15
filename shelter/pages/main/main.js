@@ -28,11 +28,13 @@ $( ".ourfriends_slider" ).append(div_ourfriends);
 
 function clickSlider() {
   if (screen.width >=768 && screen.width < 1280) {
-   // for (i = 0; i < 2; i++) {   
       slider.style.transform = 'translateX(-600px)';
       slider.style.transition = ' all 400ms linear'; 
-    // } 
-  } else {
+  } else if (screen.width >=320 && screen.width < 768) {
+    slider.style.transform = 'translateX(-300px)';
+    slider.style.transition = ' all 400ms linear'; 
+  } 
+  else {
    for (i = 0; i < 3; i++) {   
     slider.style.transform = 'translateX(-200px)';
     slider.style.transition = ' all 400ms linear'; 
@@ -59,7 +61,13 @@ function clickSlider() {
       slideDistance = - (i - 2) * 310; 
       slides[i].style.left = slideDistance + 'px';  
     }
-  } else {
+  } else if (screen.width >=320 && screen.width < 768) {
+    for (i = 0; i < 8; i++) { 
+      slideDistance = - (i - 1) * 273; 
+      slides[i].style.left = slideDistance + 'px';  
+    }
+  }
+  else {
    for (i = 0; i < 8; i++) { 
      slideDistance = - (i - 3) * 360; 
      slides[i].style.left = slideDistance + 'px';  
@@ -88,7 +96,14 @@ function clickSlider() {
         slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
         slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
       } 
-    } else {
+    } else if (screen.width >=320 && screen.width < 768) {
+      for (i = 0; i < 1; i++) { 
+        slideDistance = - 292 * (1 - i);
+        slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
+        slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
+      } 
+    }
+    else {
      for (i = 0; i < 3; i++) { 
       slideDistance = - 360 * (3 - i);
       slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';

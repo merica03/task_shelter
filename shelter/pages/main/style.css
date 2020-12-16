@@ -768,15 +768,26 @@ span {
   @media (max-width: 320px) {
 
   .header {
-    width: 100%;
+    width: 50%;
+    padding-top: 16px;
+    padding-left: 6px;
     }
+
+   .logo_title {
+    font-size: 15px; 
+    letter-spacing: 0.1rem;
+   }
   
   .logo {
   flex: none;
+  margin-left: 0;
   }
 
   .logo_subtitle {
   text-align: left;
+  margin-top: 3px;
+  font-size: 7px;
+  letter-spacing: 0.03rem;
   }
 
  .nav {
@@ -784,13 +795,14 @@ span {
   } 
   
   .toggle_bar1,.toggle_bar2,.toggle_bar3 {
-  width: 30px;
-  border: 2px solid #F1CDB3;
-  margin-top: 10px;
-  margin-left: 30px;
+  width: 15px;
+  border: 1px solid #F1CDB3;
+  margin-top: 3px;
+  margin-left: 18px;
   }
 
   .toggle_container {
+    padding-top: 5px;
     display: inline-block;
     cursor: pointer;
     font-family: Arial;
@@ -830,25 +842,52 @@ span {
   display: block;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
   }
 
   .motto_flexbox {
    display: block;
-   margin-left: 20px;
+   padding-top: 28px;
+   max-width: 135px;
+   margin-left: 16px;
   }
 
   .motto_title {
-  font-size: 29px;
+  /*max-width: 15px;*/
   text-align: center;
   max-width: 220px;
   margin-right: 0;
-  font-size: 25px;
+  font-size: 13px;
+  margin-left: 8px;
+  letter-spacing: 0.02rem;
   }
 
+  .motto_subtitle {
+  margin-left: 0;
+  margin-top: 20px;
+  font-size: 7px;
+  text-align: justify;
+  max-height: 50px;
+  letter-spacing: 0.02rem;
+  /*margin-bottom: 10px;*/
+  }
   
+  .button-primary {
+  margin-left: 12px;
+  margin-top: 15px;
+ /* height: 5px;*/
+ width: 100px;
+ height: 3px;
+  }
+
+  .button-text {
+  font-size: 8px;
+  text-align: left;
+  }
+
   .puppy {
-    width: 260px;
-    height: 271px;
+    width: 130px;
+    height: 130px;
     margin-left: 10px;
   }
   

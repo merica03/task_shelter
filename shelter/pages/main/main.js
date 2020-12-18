@@ -66,6 +66,8 @@ function clickSlider() {
       slideDistance = - (i - 1) * 273; 
       slides[i].style.left = slideDistance + 'px';  
     }
+  } else if (screen.width >=320 && screen.width < 768) {
+
   }
   else {
    for (i = 0; i < 8; i++) { 
@@ -98,7 +100,8 @@ function clickSlider() {
       } 
     } else if (screen.width >=320 && screen.width < 768) {
       for (i = 0; i < 1; i++) { 
-        slideDistance = - 292 * (1 - i);
+       /*slideDistance = - 292 * (1 - i);*/
+        slideDistance = - 280 * (1 - i);
         slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
         slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
       } 

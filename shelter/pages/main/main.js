@@ -26,8 +26,8 @@ $( ".ourfriends_slider" ).append(div_ourfriends);
 }
 
 
-function clickSlider() {
-  if (screen.width >=768 && screen.width < 1280) {
+function moveSliderToTheLeft() {
+  if (screen.width >=768) {
       slider.style.transform = 'translateX(-600px)';
       slider.style.transition = ' all 400ms linear'; 
   } else if (screen.width >=320 && screen.width < 768) {
@@ -53,10 +53,10 @@ function clickSlider() {
     restoreSlides(i);  
   }
 
-  //заполняем массив слайдов
+  //заполняем массив слайдов ИСПРАВИТЬ КОЛИЧЕСТВО СЛАЙДОВ!!!!
   slides = document.querySelectorAll(".ourfriends_pets");  
 
-  if (screen.width >=768 && screen.width < 1280) {
+  if (screen.width >=768) {
     for (i = 0; i < 8; i++) { 
       slideDistance = - (i - 2) * 310; 
       slides[i].style.left = slideDistance + 'px';  
@@ -92,7 +92,7 @@ function clickSlider() {
 
 
   setTimeout(function(){ 
-    if (screen.width >=768 && screen.width < 1280) {
+    if (screen.width >=768) {
       for (i = 0; i < 2; i++) { 
         slideDistance = - 310 * (2 - i);
         slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
@@ -109,6 +109,97 @@ function clickSlider() {
     else {
      for (i = 0; i < 3; i++) { 
       slideDistance = - 360 * (3 - i);
+      slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
+      slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
+     } 
+    }
+  },680); 
+
+}
+
+function moveSliderToTheRight() {
+  if (screen.width >=768) {
+      slider.style.transform = 'translateX(1000px)';
+      slider.style.transition = ' all 400ms linear'; 
+  } else if (screen.width >=320 && screen.width < 768) {
+    slider.style.transform = 'translateX(300px)';
+    slider.style.transition = ' all 400ms linear'; 
+  } 
+  else {
+   for (i = 0; i < 3; i++) {   
+    alert(screen.width);
+    slider.style.transform = 'translateX(200px)';
+    slider.style.transition = ' all 400ms linear'; 
+   }
+  }
+
+  setTimeout(function(){
+    //удаляем все слайды
+  for (i = 0; i < 8; i++) { 
+    slides[i].remove();  
+  }
+
+  slider.style.transform = 'translateX(0px)';
+   //восстанавливаем
+  for (i = 0; i < 8; i++) {
+    restoreSlides(i);  
+  }
+
+  //заполняем массив слайдов
+  slides = document.querySelectorAll(".ourfriends_pets");  
+
+  if (screen.width >=768) {
+    for (i = 0; i < 8; i++) { 
+      slideDistance = - (i + 1) * 360; 
+      slides[i].style.left = slideDistance + 'px';  
+    }
+  } else if (screen.width >=320 && screen.width < 768) {
+    for (i = 0; i < 8; i++) { 
+      slideDistance =  (i - 1) * 273; 
+      slides[i].style.left = slideDistance + 'px';  
+    }
+  } else if (screen.width >=320 && screen.width < 768) {
+
+  }
+  else {
+   for (i = 0; i < 8; i++) { 
+     slideDistance =  (i - 3) * 360; 
+     slides[i].style.left = slideDistance + 'px';  
+   }
+  }
+
+   for (i = 0; i < 3; i++) { 
+     rndIndexOfSlide = getRandomInt(0, 8);
+    if (ourfriendsSlidesArray.indexOf(rndIndexOfSlide) == -1) {
+       ourfriendsSlidesArray[i] = rndIndexOfSlide;
+     } else {
+           while (ourfriendsSlidesArray.indexOf(rndIndexOfSlide) !== -1) {
+            rndIndexOfSlide = getRandomInt(0, 8);
+            }
+          ourfriendsSlidesArray[i] = rndIndexOfSlide;
+       }
+   }
+  },350); 
+   
+
+
+  setTimeout(function(){ 
+    if (screen.width >=768 && screen.width < 1280) {
+      for (i = 0; i < 2; i++) { 
+        slideDistance =  360 * (2 - i);
+        slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
+        slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
+      } 
+    } else if (screen.width >=320 && screen.width < 768) {
+      for (i = 0; i < 1; i++) { 
+        slideDistance =  280 * (1 - i);
+        slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
+        slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
+      } 
+    }
+    else {
+     for (i = 0; i < 3; i++) { 
+      slideDistance =  360 * (3 - i);
       slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
       slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
      } 

@@ -30,17 +30,11 @@ function moveSliderToTheLeft() {
   if (screen.width >=768) {
       slider.style.transform = 'translateX(-600px)';
       slider.style.transition = ' all 400ms linear'; 
-  } else if (screen.width >=320 && screen.width < 768) {
+  } else {
     slider.style.transform = 'translateX(-300px)';
     slider.style.transition = ' all 400ms linear'; 
   } 
-  else {
-   for (i = 0; i < 3; i++) {   
-    slider.style.transform = 'translateX(-200px)';
-    slider.style.transition = ' all 400ms linear'; 
-   }
-  }
-
+ 
   setTimeout(function(){
     //удаляем все слайды
   for (i = 0; i < 8; i++) { 
@@ -53,21 +47,24 @@ function moveSliderToTheLeft() {
     restoreSlides(i);  
   }
 
-  //заполняем массив слайдов ИСПРАВИТЬ КОЛИЧЕСТВО СЛАЙДОВ!!!!
   slides = document.querySelectorAll(".ourfriends_pets");  
 
-  if (screen.width >=768) {
+  if (screen.width >=768 && screen.width < 1280) {
     for (i = 0; i < 8; i++) { 
       slideDistance = - (i - 2) * 310; 
       slides[i].style.left = slideDistance + 'px';  
     }
-  } else if (screen.width >=320 && screen.width < 768) {
+  } else if (screen.width  < 575) {
     for (i = 0; i < 8; i++) { 
       slideDistance = - (i - 1) * 273; 
       slides[i].style.left = slideDistance + 'px';  
     }
-  } else if (screen.width >=320 && screen.width < 768) {
-
+  }
+  else if (screen.width  >= 575 && screen.width < 768) {
+    for (i = 0; i < 8; i++) { 
+      slideDistance = - (i - 1) * 310; 
+      slides[i].style.left = slideDistance + 'px';  
+    }
   }
   else {
    for (i = 0; i < 8; i++) { 
@@ -89,19 +86,23 @@ function moveSliderToTheLeft() {
    }
   },350); 
    
-
-
   setTimeout(function(){ 
-    if (screen.width >=768) {
+    if (screen.width >=768 && screen.width < 1280) {
       for (i = 0; i < 2; i++) { 
-        slideDistance = - 310 * (2 - i);
+        slideDistance = - 320 * (2 - i);
         slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
         slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
       } 
-    } else if (screen.width >=320 && screen.width < 768) {
+    } else if (screen.width >=575 && screen.width < 768) {
       for (i = 0; i < 1; i++) { 
-       /*slideDistance = - 292 * (1 - i);*/
-        slideDistance = - 280 * (1 - i);
+        slideDistance = - 270 * (1 - i);
+        slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
+        slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
+      } 
+    }
+    else if (screen.width < 575) {
+      for (i = 0; i < 1; i++) { 
+        slideDistance = - 273 * (1 - i);
         slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
         slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
       } 
@@ -121,17 +122,10 @@ function moveSliderToTheRight() {
   if (screen.width >=768) {
       slider.style.transform = 'translateX(1000px)';
       slider.style.transition = ' all 400ms linear'; 
-  } else if (screen.width >=320 && screen.width < 768) {
+  } else  {
     slider.style.transform = 'translateX(300px)';
     slider.style.transition = ' all 400ms linear'; 
   } 
-  else {
-   for (i = 0; i < 3; i++) {   
-    alert(screen.width);
-    slider.style.transform = 'translateX(200px)';
-    slider.style.transition = ' all 400ms linear'; 
-   }
-  }
 
   setTimeout(function(){
     //удаляем все слайды
@@ -148,22 +142,20 @@ function moveSliderToTheRight() {
   //заполняем массив слайдов
   slides = document.querySelectorAll(".ourfriends_pets");  
 
-  if (screen.width >=768) {
+  if (screen.width >=575 && screen.width <=768) {
     for (i = 0; i < 8; i++) { 
-      slideDistance = - (i + 1) * 360; 
+      slideDistance = - (i + 1) * 310 ; 
       slides[i].style.left = slideDistance + 'px';  
     }
-  } else if (screen.width >=320 && screen.width < 768) {
+    } else if (screen.width < 575) {
     for (i = 0; i < 8; i++) { 
-      slideDistance =  (i - 1) * 273; 
+      slideDistance = - (i + 1) * 273; 
       slides[i].style.left = slideDistance + 'px';  
     }
-  } else if (screen.width >=320 && screen.width < 768) {
-
-  }
+  } 
   else {
    for (i = 0; i < 8; i++) { 
-     slideDistance =  (i - 3) * 360; 
+     slideDistance =  - (i + 1) * 360; 
      slides[i].style.left = slideDistance + 'px';  
    }
   }
@@ -186,18 +178,25 @@ function moveSliderToTheRight() {
   setTimeout(function(){ 
     if (screen.width >=768 && screen.width < 1280) {
       for (i = 0; i < 2; i++) { 
-        slideDistance =  360 * (2 - i);
+        slideDistance =  320 * (2 - i);
         slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
         slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
       } 
-    } else if (screen.width >=320 && screen.width < 768) {
+    } else if (screen.width >=575 && screen.width < 768) {
       for (i = 0; i < 1; i++) { 
-        slideDistance =  280 * (1 - i);
+        slideDistance =  310 * (1 - i);
         slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
         slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
       } 
     }
-    else {
+    else if (screen.width < 575) {
+      for (i = 0; i < 1; i++) { 
+        slideDistance = 273 * (1 - i);
+        slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
+        slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
+      } 
+    }
+    else if (screen.width >=1280) {
      for (i = 0; i < 3; i++) { 
       slideDistance =  360 * (3 - i);
       slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';

@@ -589,11 +589,6 @@ span {
     padding-left: 28px;
     }
      
-  /*.nav {
-   margin-left: 81px;
-  } */
-
-  /*burger menu*/
    .nav {
    display: none;
   } 
@@ -684,16 +679,13 @@ span {
   text-align: justify;
   }
 
- /* .ourfriends_slider {
-    max-width: 640px;
-  }*/
   .ourfriends_slider {
-    max-width: 190px;
+    max-width: 640px;
     overflow: hidden;
   }
   
   .ourfriends_slider_border {
-    max-width: 190px;
+    max-width: 640px;
     overflow: hidden;
     }
   
@@ -703,6 +695,15 @@ span {
 
    .ourfriends_pets {
    margin-right: 42px;  
+  }
+
+  .ourfriends_circle_right {
+  margin-left: 0;
+  margin-right: 0;
+  }
+
+  .ourfriends_circle_left {
+  margin-right: 0;
   }
 
   .ourfriends_button_secondary {
@@ -753,7 +754,7 @@ span {
  }
   }
 
-  @media (max-width: 575px) { 
+  @media (min-width: 575px) and (max-width: 767px) { 
   .header {
      width: 100%;
   }   
@@ -782,16 +783,32 @@ span {
   margin-left: 5rem;
   }
 
+  .ourfriends_circle_right {
+    margin-left: 2rem;
+   }
+
+  .ourfriends_circle_right {
+    margin-left: 0.5rem;
+   }
+
   .ourfriends {
   margin-left: 5rem;
   }
+
+  .ourfriends_slider_border:hover {
+    box-shadow: 5px 0 18px rgba(0,0,0,0.25);
+  }
+
+  .ourfriends_pets:hover {
+    box-shadow: none; 
+    }
 
   .ourfriends_button_secondary {
   margin-left: 10rem;
   }
 
   .ourfriends_slider,.ourfriends_slider_border {
-   max-width: 230px;
+   max-width: 280px;
   }
 
  .information_picture {
@@ -887,7 +904,6 @@ text-align: center;
 
   .motto_flexbox {
     display: block;
-   /* margin-left: 1rem;*/
     margin-right: 2rem;
   }
 
@@ -942,6 +958,7 @@ height: 353px;
 .ourfriends_slider {
   max-width: 190px;
   overflow: hidden;
+  margin-bottom: -30px;
 }
 
 .ourfriends_slider_border {
@@ -957,7 +974,7 @@ height: 353px;
  .ourfriends_circle_left {
   margin-right: 0;
   margin-left: 45px;
-  margin-top: 500px;
+  margin-top: 510px;
  }
  
 .ourfriends {
@@ -967,7 +984,6 @@ margin-top: 0;
 }
 
 .ourfriends_flexbox {
-/*margin-left: 5px;*/
 padding-top: 90px;
 }
 
@@ -977,8 +993,7 @@ width: 170px;
 }
 
 .ourfriends_slider_border:hover {
- /* box-shadow: 0 0 50px rgba(156, 149, 149, 0.5);*/
- box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+ box-shadow: 5px 0 18px rgba(0,0,0,0.25);
  }
 
 .ourfriends_pets {

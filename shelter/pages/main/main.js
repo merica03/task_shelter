@@ -51,7 +51,7 @@ function moveSliderToTheLeft() {
 
   if (screen.width >=768 && screen.width < 1280) {
     for (i = 0; i < 8; i++) { 
-      slideDistance = - (i - 2) * 310; 
+      slideDistance = - (i - 2) * 305; 
       slides[i].style.left = slideDistance + 'px';  
     }
   } else if (screen.width  < 575) {
@@ -191,7 +191,7 @@ function moveSliderToTheRight() {
     }
     else if (screen.width < 575) {
       for (i = 0; i < 1; i++) { 
-        slideDistance = 273 * (1 - i);
+        slideDistance = 271 * (1 - i);
         slides[ourfriendsSlidesArray[i]].style.transform = 'translateX(' + slideDistance + 'px)';
         slides[ourfriendsSlidesArray[i]].style.transition = ' all 300ms linear'; 
       } 
